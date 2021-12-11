@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link';
 
 import { getSortedPostsData } from '../lib/posts'
 
@@ -39,6 +40,8 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      <Link href="/second-page">Go to second page</Link>
+      <Link href="/third-page">Go to third page</Link>
       </section>
     </Layout>
   )
