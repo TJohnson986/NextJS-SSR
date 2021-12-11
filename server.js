@@ -8,6 +8,19 @@ const handler = app.getRequestHandler();
 
 app.prepare().then(() => {
     const server = express();
+
+    server.get('/page2', (req, res) => {
+        return app.render(req, res, '/page2');
+    })
+
+    server.get('/page3', (req, res) => {
+        return app.render(req, res, '/page3');
+    })
+
+    server.get('*', (req, res) => {
+        return handler(req, res);
+    })
+    
     server.listen(port, (err) => {
         if (err) throw err;
         console.log(`Ready on port ${port}`)
