@@ -9,12 +9,12 @@ const handler = app.getRequestHandler();
 app.prepare().then(() => {
     const server = express();
 
-    server.get('/page2', (req, res) => {
-        return app.render(req, res, '/page2');
+    server.get('/second-page', (req, res) => {
+        return app.render(req, res, '/second-page');
     })
 
-    server.get('/page3', (req, res) => {
-        return app.render(req, res, '/page3');
+    server.get('/third-page', (req, res) => {
+        return app.render(req, res, '/third-page');
     })
 
     server.get('*', (req, res) => {
